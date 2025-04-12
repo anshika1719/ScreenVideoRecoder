@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pro Loom Clone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Auth Screen -->
+    <div id="auth-screen">
+      <h2>Login or Sign Up</h2>
+      <input id="username" type="text" placeholder="Username">
+      <input id="password" type="password" placeholder="Password">
+      <button id="login-btn">Login</button>
+      <button id="signup-btn">Sign Up</button>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="hidden">
+      <h2>Welcome, <span id="user-name"></span>!</h2>
+      <div id="mode-select">
+        <button id="screen-recorder-btn">Screen + Audio</button>
+        <button id="video-recorder-btn">Screen + Video + Audio</button>
+      </div>
+      <div id="recorder-ui">
+        <video id="video-player" autoplay muted></video>
+        <video id="webcam-preview" class="hidden" autoplay muted></video>
+        <div>
+          <input type="checkbox" id="include-camera">
+          <label for="include-camera">Include Webcam</label>
+          <input type="checkbox" id="include-audio" checked>
+          <label for="include-audio">Include Audio</label>
+        </div>
+        <div>
+          <button id="start-btn">Start</button>
+          <button id="pause-btn" class="hidden">Pause</button>
+          <button id="resume-btn" class="hidden">Resume</button>
+          <button id="stop-btn" class="hidden">Stop</button>
+        </div>
+      </div>
+
+      <!-- Recordings Section -->
+      <div id="recordings">
+        <div id="tools">
+          <input type="text" id="search-input" placeholder="Search by name">
+          <select id="sort-select">
+            <option value="newest">Newest First</option>
+            <option value="oldest">Oldest First</option>
+          </select>
+        </div>
+        <div id="video-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
